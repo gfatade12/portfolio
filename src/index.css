@@ -1,0 +1,45 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  /* African tech theme with animated SVG circuits overlay */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: linear-gradient(135deg, #1b2a4e 40%, #0984e3 70%, #d0e6ff 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('background_image.webm') center center / cover no-repeat;
+  opacity: 0.51;
+  pointer-events: none;
+  z-index: 0;
+  animation: fadecircuits 8s ease-in-out infinite alternate;
+}
+
+@keyframes fadecircuits {
+  0%   { opacity: 0.18; }
+  100% { opacity: 0.31; }
+}
+
+.MuiContainer-root {
+  position: relative;
+  z-index: 1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

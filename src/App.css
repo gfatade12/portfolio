@@ -1,0 +1,34 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  /* African tech theme with abstract blue accents */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1b2a4e 40%, #0984e3 70%, #d0e6ff 100%);
+  /* Optionally overlay a light Africa pattern if you want to use an SVG or image */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Subtle geometric pattern (optional placeholder for SVG or pattern image) */
+body::before {
+  /*preload-image: url('circuit_backg.mp4');*/
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('background_image.webm');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.MuiContainer-root {
+  position: relative;
+  z-index: 1;
+}
