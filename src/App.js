@@ -1,20 +1,21 @@
 import React from 'react';
-import { Container, Typography, Box, Link, Card, CardContent, Grid, Divider } from '@mui/material';
+import { Container, Typography, Box, Button, Card, CardContent, Grid, Divider } from '@mui/material';
 import headshot from './headshot.png';
-import bgVideo from "./background_image2.webm";
+import bgpic from './bgimage.jpg';
 import { keyframes } from "@mui/system";
 
 const projects = [
-  { title: 'Agentic RAG Assistant', description: 'An intelligent retrieval-augmented generation system that combines local language models with dynamic web search to deliver accurate, up-to-date responses. The assistant embeds user queries using a lightweight LLaMA-based model, retrieves relevant context from a MongoDB Atlas vector database using cosine similarity, and generates responses with an Ollama-powered chatbot. When internal knowledge is insufficient, the system autonomously queries the web, chunks and embeds new information, updates the database, and re-runs retrieval to ensure high-quality, context-aware answers.', key_features:["Python", "RAG", "Vector Database", "Cosine Similarity", "Web Search API", "Dynamic Chunking", "GenAI", "Embedding"], timeline: 'Dec 2025 – Jan 2026'}, 
-  { title: 'The Boxer', description: 'A cardboard shredder/pulper that streamlined cardboard recycling for small businesses within 6 weeks. Conducted user research, built a functional prototype, and presented to investors and faculty judges. The project demonstrated a 50% reduction in cardboard waste volume and won recognition for its sustainability impact, positioning it as a potential cost-saving solution for facilities management.', key_features:["Embedded Systems", "Welding", "Circuit Design", "CAD Modeling", "Prototyping", "Product Design", "Research", "Product Testing"], timeline: 'May 2023 – Jun 2023'}, 
-  { title: 'Wegmans Pathfinding Optimizer', description: 'A Python-based application that helps users plan an efficient in-store shopping route by combining real-world product data with classical search algorithms through an interactive graphical interface.', key_features:["Python","User GUI","Web Scraping","A* Algorithm","Key Metrics Display","Route Visualization"], timeline: 'Oct 2024' }, 
+  { title: 'Agentic RAG Assistant', description: 'Built a retrieval-augmented generation (RAG) system using LLaMA-based embeddings, MongoDB Atlas vector search, and an Ollama LLM to deliver accurate, context-aware responses, with an automated web-search fallback to continuously update knowledge.', key_features:["Python", "RAG", "Vector Database", "Cosine Similarity", "Web Search API", "Dynamic Chunking", "GenAI", "Embedding"], timeline: 'Dec 2025 – Jan 2026'}, 
+  { title: 'ASRS Reporting System', description: 'Collaborated on a team of 8 to develop a reporting platform for the Advanced Student Resource System (ASRS) in Syracuse, NY. The system supports tracking community initiatives, generating and managing reports, and creating and distributing surveys. Worked in an agile environment with weekly sprints and continuous client communication to iteratively deliver features aligned with user needs.', key_features:["Next.js", "SQlite", "Agile Worklow", "Jira", "Vision Paradigm"], timeline: 'Oct 2025 – May 2026'}, 
+  { title: 'Wegmans Pathfinding Optimizer', description: 'Developed a Python application that integrates web-scraped product data with an A* search algorithm to compute optimized in-store shopping routes through an interactive GUI which was awarded as a 24-hour hackathon winner.', key_features:["Python","User GUI","Web Scraping","A* Algorithm","Key Metrics Display","Route Visualization"], timeline: 'Oct 2024' }, 
   { title: 'Vision Pivot', description:'An AI-powered physical sorting system that uses real-time computer vision and embedded control to classify and route objects using a dual-axis servo mechanism. The system bridges machine learning, hardware control, and user interaction through an integrated embedded pipeline.', key_features: ["Python","OpenCV","Teachable Machine (custom model)","Arduino","Raspberry Pi 5"], timeline: 'Mar 2025 – Apr 2025' },
+  { title: 'The Boxer', description: 'Built a cardboard shredder/pulper prototype within 6 weeks to optimize recycling workflows, reducing waste volume by 70% and demonstrating a scalable, cost-saving solution for small businesses.', key_features:["Embedded Systems", "Welding", "Circuit Design", "CAD Modeling", "Prototyping", "Product Design", "Research", "Product Testing"], timeline: 'May 2023 – Jun 2023'},
   { title: 'FuelSense Recommender', description: 'An intelligent recommendation bot that personalizes gas station pricing suggestions using user demographics and location data. The system analyzes economic status, income, family size, and proximity to generate optimized recommendations, helping users identify the best nearby fuel options based on both cost and convenience.', key_features:["Python", "Data Analysis", "User profiling & Input processing", "Location-Based Services"], timeline: 'Jun 2022 – Aug 2023' }, 
 ];
 
 const experience = [
-  { job: 'IT Supply Chain Deliver Intern', company: 'Johnson & Johnson', duration: 'May 2025 – Aug 2025', info: 'Managed supply chain workflows in SAP by executing multiple user stories involving order setup, data modification, and relationship building. Designed and implemented an automated Jira-to-Power BI pipeline to streamline task tracking and improve cross-team communication by ~30%, leveraging Python and the Jira API to extract and clean large JSON datasets for dashboard reporting. Contributed to the GenAI Governance team by developing a chatbot with a RAG pipeline and governance-trained agents deployed on MCP servers, including prompt-engineering a routing agent to extract key information and link data to 15+ form sections, reducing user confusion and improving accuracy. Additionally, supported the AWS cloud migration for Vision Care, enabling company-wide data access and improving operational efficiency.' },
-  { job: 'Software Engineering Digital Supply Chain Strategy & Execution Intern', company: 'Merck', duration: 'Jun 2024 – Aug 2024', info: 'I focused on enhancing AI-driven tools like Build-GPT to improve information retrieval and implemented automation scripts in rapid response, a materials site communicator. I optimized team communication and collaboration through Confluence, a collaboration and knowledge tool, created strategic roadmaps for seamless system upgrades, and collaborated with cross-functional teams to improve the safety stock application, increasing data visibility across over 18 sites. Additionally, I led the development of business cases for five key project initiatives, streamlining project management and enhancing overall team performance.' },
+  { job: 'IT Supply Chain Deliver Intern', company: 'Johnson & Johnson', duration: 'May 2025 – Aug 2025', info: 'Managed SAP supply chain workflows by implementing user stories for order setup and data operations. Built an automated Jira-to-Power BI pipeline using Python and the Jira API, improving cross-team visibility by ~30%. Developed a GenAI chatbot with a RAG pipeline and routing agents to streamline data extraction across 15+ form sections, and supported AWS cloud migration to enhance data accessibility and efficiency.' },
+  { job: 'Software Engineering Digital Supply Chain Strategy & Execution Intern', company: 'Merck', duration: 'Jun 2024 – Aug 2024', info: 'Enhanced AI-driven tools (e.g., Build-GPT) to improve information retrieval and developed automation scripts for internal systems. Improved cross-team collaboration using Confluence and contributed to safety stock application enhancements, increasing data visibility across 18+ sites. Led development of business cases for 5 key initiatives, streamlining project execution and team performance.' },
   {job: 'IT Student Consultant', company: 'Syracuse University', duration: 'Dec 2022 – Ongoing', info: 'I work, on average, 20 hours a week in the Syracuse University ITS service center. I aid students, faculty, and visitors with their laptops, school accounts, and any general computing issues they may have.' }
 ];
 
@@ -30,27 +31,21 @@ const fadecircuits = keyframes`
 function App() {
   return (
     <>
-      {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        playsInline
-        loop
-        style={{
+      {/* Background Image */}
+      <Box
+        sx={{
           position: "fixed",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          width: "100vw",
-          height: "100vh",
-          objectFit: "cover",
+          backgroundImage: `url(${bgpic})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           zIndex: -1,
-          opacity: 0.31,
+          opacity: 1.0,
         }}
-      >
-        <source src={bgVideo} type="video/webm" />
-      </video>
+      />
       {/* Animated Overlay */}
     <Box
       sx={{
@@ -79,10 +74,48 @@ function App() {
       <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         {/* HEADER */}
         <Box sx={{ py: 5, background: 'linear-gradient(90deg, #0a2342 70%, #0984e3 100%)', color: 'white', borderRadius: 5, mb: 4, textAlign: 'center', boxShadow: 3 }}>
-          <Typography variant="h3" fontWeight="bold" gutterBottom>Gabriel Fatade - Aspiring ML Engineer.</Typography>
+          <Typography variant="h3" fontWeight="bold" gutterBottom>Gabriel Fatade - Aspiring SWE/ML Engineer.</Typography>
         </Box>
 
         <Divider sx={{ mb: 4, background: '#bed1fc' }} />
+
+        {/* CONNECT / RESUME BUTTONS */}
+        <Box sx={{ mb: 6, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, justifyContent: 'center', alignItems: 'stretch' }}>
+          <Box sx={{ flex: 1, background: '#0a2342 70%', borderRadius: 3, p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant="h6" color="white" sx={{ mb: 2 }}>
+              Connect with me
+            </Typography>
+            <Button
+              component="a"
+              href="https://www.linkedin.com/in/gabriel-fatade/"
+              target="_blank"
+              rel="noopener"
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{ px: 4 }}
+            >
+              LinkedIn
+            </Button>
+          </Box>
+          <Box sx={{ flex: 1, background: '#0a2342 70%', borderRadius: 3, p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant="h6" color="white" sx={{ mb: 2 }}>
+              Resume
+            </Typography>
+            <Button
+              component="a"
+              href="https://drive.google.com/file/d/1ZF0Hq9-mDInx7Q-Idd8OydhkC0Jc8QB7/view?usp=sharing"
+              target="_blank"
+              rel="noopener"
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{ px: 4 }}
+            >
+              Take a look at my resume
+            </Button>
+          </Box>
+        </Box>
 
         {/* IMAGE AND ABOUT ME SIDE BY SIDE */}
         <Box
@@ -124,13 +157,13 @@ function App() {
               }}
             />
           </Box>
-          {/* About me section */}
-          <Box sx={{ flex: 1}}>
-            <Typography variant="h4" color="#75b9f9" mb={2}>
+          {/* Connect / Resume section */}
+          <Box sx={{ flex: 1 }}>
+            <Typography variant="h4" color="#75b9f9" sx={{ mb: 2 }}>
               About Me
             </Typography>
             <Typography variant="body1" color="#eaf6ff">
-            I’m Gabriel Fatade, an aspiring Machine Learning and Software Engineer who enjoys building technology that meaningfully improves users’ lives. Engineering isn’t just about writing code, it’s about creating systems that enhance how people interact with the world, and knowing my work can impact real users gives me deeper motivation and focus. My experience spans intelligent AI pipelines, agentic RAG systems, computer vision, embedded control, and scalable software design. I like turning complex ideas into practical, reliable tools by bridging machine learning with production-grade engineering, with a particular interest in applied AI, ML infrastructure, and full-stack systems that move models beyond demos into real-world impact.
+              I’m Gabriel Fatade, an aspiring Machine Learning and Software Engineer focused on building impactful, user-centered technology. My experience spans AI pipelines, agentic RAG systems, computer vision, embedded systems, and full-stack development. I enjoy turning complex ideas into reliable, production-ready tools, with a focus on software engineering and machine learning systems that deliver real-world impact. ALWAYS engineer for a greater good. 
             </Typography>
           </Box>
         </Box>
@@ -179,16 +212,6 @@ function App() {
       </Box>
 
       <Divider sx={{ mb: 4, background: '#bed1fc' }} />
-
-      {/* LINKEDIN */}
-      <Box sx={{ textAlign: 'center', background: 'rgba(3, 11, 22, 0.7)', borderRadius: 1, py: 2, mt: 2, boxShadow: 1 }}>
-        <Typography variant="body1" sx={{ color: '#1565c0' }}>
-          Connect with me on{' '}
-          <Link href="https://www.linkedin.com/in/gabriel-fatade/" color="#1565c0" target="_blank" rel="noopener">
-            LinkedIn
-          </Link>
-        </Typography>
-      </Box>
     </Container>
     </>
   );
